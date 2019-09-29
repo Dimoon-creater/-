@@ -1,27 +1,21 @@
-a = float (input("Введите a: "))  
-b = float (input("Введите b: ")) 
-c = float (input("Введите c: ")) 
-def D(a,b,c):
-    return  b**2 - 4*a*c   
-if D(a,b,c) < 0:   
-    print ("Дискриминант = 0")
-    print ("Корней нет")
-elif D(a,b,c) == 0:    
-    x = (-b + D(a,b,c)** .5) / (2*a)
-    print ("Дискриминант = ", D(a,b,c))
-    print ("Корень один: ", x)
-else:   
-    def x1(a,b,c):
-        if(discriminant(a,b,c) >=0):
-            return -1*b - (discriminant(a,b,c)** 0,5)/2*a
+def Proverka(k):
+    while type(k) == str:
+        if k.isdigit():
+            return float(k)
         else:
-            raise Exception( "No real resolutions")
-    def x2(a,b,c):
-        if(discriminant(a,b,c) >=0):
-            return -1*b - (discriminant(a,b,c)** 0,5)/2*a
-        else:
-            raise Exception( "No real resolutions")
-    print ("Дискриминант = ", D(a,b,c))
-    print ("Есть 2 корня: ")
-    print ("Корень 1 =  ", x1)
-    print ("Корень 2 =  ", x2)
+            print("try again")
+            k = input()
+a = Proverka(input('введите a'))
+b = Proverka(input('введите b'))
+c = Proverka(input('введите c'))
+D = b ** 2 - 4 * a * c
+if D > 0:
+    x1 = (-1 * b - D ** (1 / 2)) / (2 * a)
+    x2 = (-1 * b + D ** (1 / 2)) / (2 * a)
+    print(x1)
+    print(x2)
+elif discriminant(a1,b1,c1) == 0:
+    x1 = (-1 * b1) / (2 * a1)
+    print(x1)
+else:
+    print("No solutions")

@@ -33,7 +33,7 @@ if D > 0:
     x2 = (-1 * b + D ** (1 / 2)) / (2 * a)
     print("x1=" + str (float(x1)) )
     print("x2=" + str (float (x2)) )
-elif discriminant(a1,b1,c1) == 0:
+elif D == 0:
     x1 = (-1 * b1) / (2 * a1)
     print(x1)
 else:

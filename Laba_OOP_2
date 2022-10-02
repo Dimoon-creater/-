@@ -1,0 +1,133 @@
+using System;
+using System.Collections;
+
+namespace Collections
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int prog(int a)
+            {
+                int z;
+                z = a;
+                try
+                {
+                    z = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Введите целое число ");
+                    z = prog(0);
+                }
+                return z;
+            }
+
+            int MenuRet;
+            MenuRet = 0;
+
+            Console.WriteLine("Создан массив ");
+            ArrayList list = new ArrayList();
+            list.Add(0);
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+
+            do
+            {
+                Console.WriteLine("\nВот наш массив ");
+                foreach (object o in list)
+                {
+                    Console.WriteLine(o);
+                }
+                Console.WriteLine("\nMenu: ");
+                Console.WriteLine("1 - Добавить элемент в массив");
+                Console.WriteLine("2 - Удалить элемет массива");
+                Console.WriteLine("3 - Перевернуть массив");
+                Console.WriteLine("4 - Длина массива");
+                Console.WriteLine("5 - Максимальное число массива");
+                Console.WriteLine("6 - Минимальное число массива");
+                Console.WriteLine("7 - Сумма чисел массива");
+                Console.WriteLine("8 - Конец.");
+                Console.WriteLine("\nВведите число от 1 до 8 ");
+
+                int h, z, x;
+                z = 0;
+                x = 1000000;
+                h = prog(0);
+                switch (h)
+                {
+                    case 1:
+                        Console.WriteLine("  Добавить элемент в массив");
+                        list.Add(prog(0));
+                        break;
+
+                    case 2:
+                        Console.WriteLine("  Удалить элемет массива");
+                        Console.WriteLine("Введите индекс элемента котроый хотите удалить (Счёт начинается с 0) ");
+                        list.RemoveAt(prog(0));
+                        break;
+
+                    case 3:
+                        Console.WriteLine("  Перевернуть массив");
+                        list.Reverse();
+                        break;
+
+                    case 4:
+                        Console.WriteLine("  Длина массива");
+                        foreach (object o in list)
+                        {
+                            ++ z;
+                        }
+                        Console.WriteLine("Длина массива: " + z); 
+                        break;
+
+                    case 5:
+                        Console.WriteLine("  Максимальное число массива");
+                        foreach (int o in list)
+                        {
+                            if (o > z)
+                            {
+                                z = o;
+                            }
+                        }
+                        Console.WriteLine("Максимальное число массива: " + z);
+                        break;
+
+                    case 6:
+                        Console.WriteLine("  Минимальное число массива");
+                        foreach (int o in list)
+                        {
+                            if (o < x)
+                            {
+                                z = o;
+                            }
+                        }
+                        Console.WriteLine("Минимальное число массива: " + x);
+
+                        break;
+
+                    case 7:
+                        Console.WriteLine("  Сумма чисел массива");
+                        foreach (int o in list)
+                        {
+                            z = z + o;
+                        }
+                        Console.WriteLine("Сумма чисел массива: " + z);
+                        break;
+
+                    case 8:
+                        Console.WriteLine("  Конец.");
+                        MenuRet = 1;
+                        break;
+
+                    default:
+                        Console.WriteLine("  Просили ввести число от 1 до 8, а вы ввели " + h);
+                        break;
+                }
+
+            } while (MenuRet < 1);
+        }
+    }
+}

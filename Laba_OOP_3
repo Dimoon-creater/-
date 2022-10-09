@@ -1,0 +1,22 @@
+using System;
+using System.Collections;
+
+// Поиск слов в строке, где нет повторяющихся букв
+
+
+namespace Collections
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите строку где нужно найти слова в которых нет повторяющихся букв: ");
+            string one = Console.ReadLine();
+            List<string> two = one.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            var p = two.Where(a => a.Distinct().Count() == a.Count());
+            foreach (var z in p)
+                Console.WriteLine(z);
+
+        }
+    }
+}

@@ -1,0 +1,7 @@
+import java.util.Scanner;
+int h = 1;
+        double a;
+        Scanner in = new Scanner(System.in);
+        System.out.print("enter a: ");
+        a = in.nextDouble();
+        in.close();

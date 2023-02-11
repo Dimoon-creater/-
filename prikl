@@ -5,3 +5,5 @@ int h = 1;
         System.out.print("enter a: ");
         a = in.nextDouble();
         in.close();
+double z = Math.pow (x,2) + 2;
+            System.out.println("(x**2)+2 = " + z);
